@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Osivue Labs | Digital Studio & Print Shop, Benin City</title>
+<meta name="description" content="Website development, web applications, assignment typing and formatting, printing and communication coaching in Benin City, Nigeria.">
+<meta name="theme-color" content="#f4efe6">
+<style>
+:root{--paper:#f4efe6;--ink:#121212;--red:#ff4d1c;--green:#0f3d2e;--sand:#ffd9a8;--line:2px solid var(--ink);--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.1}
+.wrap{max-width:1040px;margin:auto;padding:0 20px}
+.sec{padding:70px 0}
+.dark{background:var(--green);color:var(--paper)}
+.accent{background:var(--sand)}
+.num{font-weight:800;color:var(--red);letter-spacing:2px}
+h2{font-size:2.2rem;margin-bottom:26px}
+.note{font-size:12px;opacity:.7;margin-top:12px}
+
+.top{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:var(--line)}
+.bar{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{font-weight:900;letter-spacing:1px}
+.logo span{color:var(--red)}
+.menu{display:flex;gap:20px;align-items:center}
+.menu a{font-size:14px;font-weight:600}
+.menu a:hover{color:var(--red)}
+.cta-sm{background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:30px}
+#burger{display:none;background:none;border:var(--line);padding:8px 12px;font-weight:800;font-size:12px;border-radius:8px;cursor:pointer}
+@media(max-width:860px){
+ #burger{display:block}
+ .menu{position:absolute;top:62px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px;gap:16px;border-bottom:var(--line);display:none}
+ .menu.open{display:flex}
+}
+
+.btn{display:inline-block;padding:13px 24px;border:var(--line);border-radius:40px;font-weight:700;font-size:15px;background:transparent;color:var(--ink);cursor:pointer;font-family:inherit;transition:.15s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:var(--red);border-color:var(--red)}
+.btn:active{transform:translateY(2px)}
+.full{width:100%;margin-top:10px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.hero{padding:56px 0 50px}
+.hero-grid{display:grid;gap:34px;align-items:center}
+@media(min-width:820px){.hero-grid{grid-template-columns:1.25fr 1fr}}
+.eyebrow{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.hero h1{font-size:2.6rem;margin-bottom:16px}
+.hero mark{background:var(--red);color:var(--paper);padding:0 8px;border-radius:6px}
+.hero u{text-decoration-color:var(--red);text-decoration-thickness:4px;text-underline-offset:5px}
+.lead{max-width:480px;margin-bottom:24px;font-size:1.05rem}
+.portrait{position:relative;border:var(--line);border-radius:var(--r);background:var(--sand);box-shadow:8px 8px 0 var(--ink);aspect-ratio:4/5;max-width:340px;width:100%;margin:auto;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.portrait figcaption{position:absolute;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:10px 14px;font-size:13px}
+.portrait figcaption b{color:var(--red);margin-right:8px}
+
+.ticker{overflow:hidden;background:var(--ink);color:var(--paper);padding:12px 0;font-weight:800;letter-spacing:3px;font-size:13px;white-space:nowrap}
+.track{display:inline-block;animation:slide 26s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.two{display:grid;gap:20px}
+@media(min-width:800px){.two{grid-template-columns:1fr 1.6fr}}
+.two p{margin-bottom:12px}
+.tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags li{border:var(--line);padding:4px 14px;border-radius:30px;font-size:13px;font-weight:600}
+.list{list-style:none}
+.list li{display:flex;gap:18px;padding:20px 0;border-top:1px solid #ffffff44}
+.list span{font-family:Georgia,serif;font-size:2rem;color:var(--red);width:34px;flex:none}
+.list h3{font-size:1.25rem;margin-bottom:4px}
+.list p{opacity:.8;font-size:14px}
+.cards{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+
+.box{background:var(--paper);color:var(--ink);border:var(--line);border-radius:var(--r);padding:24px;box-shadow:6px 6px 0 var(--ink)}
+.box h3{margin-bottom:6px}
+.box p{font-size:14px}
+.box.hot{background:var(--red);color:var(--paper)}
+.box.hot .btn{border-color:var(--ink)}
+.amt{font-family:Georgia,serif;font-size:1.9rem;font-weight:700;margin:6px 0}
+.box ul{list-style:none;margin:12px 0 18px;font-size:14px}
+.box li{padding:6px 0;border-bottom:1px dashed currentColor}
+.box li::before{content:"→ "}
+.link{display:block}
+.link small{display:block;text-transform:uppercase;letter-spacing:1px;opacity:.6;font-size:11px}
+.link b{font-size:1.05rem;word-break:break-word}
+.link:active{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--ink)}
+.intro{max-width:560px;margin:-10px 0 26px}
+.fair{margin-top:22px;padding:14px 18px;border:var(--line);border-radius:12px;background:var(--paper);font-size:14px}
+
+.calc,.pay,form.box{max-width:540px}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 4px}
+input,select,textarea{width:100%;padding:13px;border:var(--line);border-radius:10px;background:#fff;font-size:16px;font-family:inherit;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--red)}
+.total{margin-top:18px;padding:16px;border:2px dashed var(--ink);border-radius:12px;text-align:center}
+.total strong{display:block;font-family:Georgia,serif;font-size:2.2rem;color:var(--red)}
+.err{color:#c1121f;font-size:13px;min-height:18px;margin-top:8px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px dashed var(--ink)}
+.row small{display:block;font-size:11px;text-transform:uppercase;letter-spacing:1px;opacity:.6}
+.copy{border:var(--line);background:var(--sand);padding:6px 14px;border-radius:30px;font-weight:700;font-size:12px;cursor:pointer}
+
+details{border:var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px;background:#fff}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:10px;font-size:14px}
+
+footer{background:var(--ink);color:var(--paper);text-align:center;padding:26px 0;font-size:13px}
+.wa{position:fixed;right:16px;bottom:18px;width:54px;height:54px;border-radius:50%;background:#25d366;border:var(--line);display:grid;place-items:center;font-weight:900;font-size:14px;box-shadow:3px 3px 0 var(--ink);z-index:40}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.track{animation:none}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a href="#home" class="logo">OSIVUE<span>/</span>LABS</a>
+    <nav id="menu" class="menu">
+      <a href="#studio">Studio</a><a href="#services">Services</a><a href="#assignments">Assignments</a><a href="#quote">Print Quote</a>
+      <a href="#pricing">Pricing</a><a href="#pay">Pay</a><a href="#order" class="cta-sm">Order</a>
+    </nav>
+    <button id="burger" aria-label="Menu">MENU</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Digital studio + print shop / Benin City, NG</p>
+        <h1>We build <mark>websites</mark>, apps &amp; print things that <u>work</u>.</h1>
+        <p class="lead">Clean documents, sharp websites and practical web apps, all handled with the care of a professional studio and delivered on time.</p>
+        <div class="actions">
+          <a href="#order" class="btn btn-ink">Start a project</a>
+          <a href="#quote" class="btn">Get a print quote</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <img src="images/me.jpg" alt="Justice Osivue Okpokpa, founder of Osivue Labs" onerror="this.style.display='none'">
+        <figcaption><b>Justice Osivue</b> Founder &amp; Developer</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track"><span>WEB DESIGN ✦ WEB APPS ✦ ASSIGNMENTS ✦ PRINTING ✦ GRAPHICS ✦ COACHING ✦ INTERNET ✦ </span><span>WEB DESIGN ✦ WEB APPS ✦ ASSIGNMENTS ✦ PRINTING ✦ GRAPHICS ✦ COACHING ✦ INTERNET ✦ </span></div>
+  </div>
+
+  <section id="studio" class="sec">
+    <div class="wrap two">
+      <div><p class="num">01</p><h2>The Studio</h2></div>
+      <div class="reveal">
+        <p>I am <b>Justice Osivue Okpokpa</b>, a University of Benin English &amp; Literature student, web developer and founder of the Bookworm Club.</p>
+        <p>Osivue Labs brings those strengths together: clear writing, clean code and careful print work, at fair prices and with honest communication.</p>
+        <ul class="tags"><li>Web Development</li><li>Web Apps</li><li>Assignments</li><li>Printing</li><li>Graphics</li><li>Communication</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="sec dark">
+    <div class="wrap">
+      <p class="num">02</p><h2>Services</h2>
+      <ol class="list">
+        <li class="reveal"><span>A</span><div><h3>Website Development</h3><p>Fast, mobile-first websites for schools, businesses and personal brands.</p></div></li>
+        <li class="reveal"><span>B</span><div><h3>Web Applications</h3><p>Registration, results, booking and dashboard systems built around how you work.</p></div></li>
+        <li class="reveal"><span>C</span><div><h3>Assignment Services</h3><p>Typing, formatting, proofreading, referencing, printing and binding for student work.</p></div></li>
+        <li class="reveal"><span>D</span><div><h3>Printing &amp; Documents</h3><p>CVs, flyers, prospectuses and reports, with binding and lamination available.</p></div></li>
+        <li class="reveal"><span>E</span><div><h3>Graphics &amp; Design</h3><p>Posters, banners, certificates and social media designs that look professional.</p></div></li>
+        <li class="reveal"><span>F</span><div><h3>Communication Coaching</h3><p>Practical guidance on writing, presentation and public speaking.</p></div></li>
+        <li class="reveal"><span>G</span><div><h3>Internet Services</h3><p>Reliable MiFi access for online applications, form submissions and downloads.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="assignments" class="sec accent">
+    <div class="wrap">
+      <p class="num">03</p><h2>Assignment Desk</h2>
+      <p class="intro">Send us your finished work or handwritten notes, and we will turn them into a clean, correctly formatted assignment, ready to submit.</p>
+      <div class="cards">
+        <article class="box reveal"><h3>Typing &amp; Formatting</h3><p>Handwritten or draft work typed neatly, with proper headings, spacing, fonts and cover page.</p></article>
+        <article class="box reveal"><h3>Proofreading &amp; Referencing</h3><p>Grammar and spelling checks, plus citations and reference lists in APA, MLA or Harvard style.</p></article>
+        <article class="box reveal"><h3>Printing &amp; Binding</h3><p>Sharp prints with spiral binding or lamination, ready for submission on time.</p></article>
+      </div>
+      <p class="fair"><b>Please note:</b> we type, format, proofread and print your own work. We do not write assignments for submission as someone else's work.</p>
+      <div class="actions" style="margin-top:22px"><a href="#order" class="btn btn-ink">Send my assignment</a></div>
+    </div>
+  </section>
+
+  <section id="quote" class="sec">
+    <div class="wrap">
+      <p class="num">04</p><h2>Print Quote</h2>
+      <div class="box calc">
+        <label for="item">Service</label><select id="item"></select>
+        <label for="qty">Quantity</label><input id="qty" type="number" min="1" value="10" inputmode="numeric">
+        <div class="total"><small>Estimated total</small><strong id="total">₦0</strong></div>
+        <button class="btn btn-ink full" id="quoteBtn">Send this quote on WhatsApp</button>
+        <p class="note">Estimates are a guide. The final price is confirmed before work begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="sec accent">
+    <div class="wrap">
+      <p class="num">05</p><h2>Web Packages</h2>
+      <div class="cards">
+        <article class="box reveal"><h3>Starter</h3><p class="amt">₦25,000+</p><ul><li>1 to 3 pages</li><li>Mobile friendly</li><li>WhatsApp button</li></ul><a href="#order" class="btn">Choose</a></article>
+        <article class="box hot reveal"><h3>Business</h3><p class="amt">₦60,000+</p><ul><li>Up to 8 pages</li><li>Custom design</li><li>Order forms + SEO basics</li></ul><a href="#order" class="btn btn-ink">Choose</a></article>
+        <article class="box reveal"><h3>Web App</h3><p class="amt">Custom</p><ul><li>Tailored features</li><li>Admin dashboard</li><li>Training + support</li></ul><a href="#order" class="btn">Get a quote</a></article>
+      </div>
+      <p class="note">Prices shown are starting points. You receive a fixed quote after we review your needs.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="num">06</p><h2>Why Choose Me</h2>
+      <div class="cards">
+        <article class="box reveal"><h3>Neat work</h3><p>Every file is checked carefully before it reaches you.</p></article>
+        <article class="box reveal"><h3>Clear updates</h3><p>You always know where your order stands.</p></article>
+        <article class="box reveal"><h3>Fair prices</h3><p>Quotes are agreed upfront, with no surprises.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pay" class="sec dark">
+    <div class="wrap">
+      <p class="num">07</p><h2>How To Pay</h2>
+      <div class="box pay">
+        <div class="row"><div><small>Bank</small><b id="p1">OPay</b></div><button class="copy" data-c="p1">Copy</button></div>
+        <div class="row"><div><small>Account name</small><b id="p2">JUSTICE OSIVUE OKPOKPA</b></div><button class="copy" data-c="p2">Copy</button></div>
+        <div class="row"><div><small>Account number</small><b id="p3">7072500449</b></div><button class="copy" data-c="p3">Copy</button></div>
+        <p class="note">Pay by transfer, then send your proof of payment on WhatsApp. Larger projects require a deposit before work starts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="sec">
+    <div class="wrap">
+      <p class="num">08</p><h2>Questions</h2>
+      <details><summary>How long does a website take?</summary><p>Simple sites take 2 to 5 days. Larger sites and apps depend on the features you need.</p></details>
+      <details><summary>How fast can you handle an assignment?</summary><p>Short assignments are often ready the same day. Send your work early and tell us your deadline so we can plan around it.</p></details>
+      <details><summary>Do you write assignments for students?</summary><p>No. We type, format, proofread and print work that you have written yourself.</p></details>
+      <details><summary>Can you print and deliver?</summary><p>Yes. Send your file on WhatsApp or email, then we agree on pickup or delivery.</p></details>
+      <details><summary>Do you offer support after delivery?</summary><p>Yes. I am happy to help with small fixes and questions afterwards.</p></details>
+      <details><summary>Will my site work on phones?</summary><p>Yes. Every site is built mobile-first and tested on small screens.</p></details>
+    </div>
+  </section>
+
+  <section id="order" class="sec accent">
+    <div class="wrap">
+      <p class="num">09</p><h2>Start An Order</h2>
+      <form class="box" novalidate onsubmit="return false">
+        <label for="name">Full name</label><input id="name" autocomplete="name" placeholder="e.g. John Doe">
+        <label for="phone">Phone number</label><input id="phone" type="tel" autocomplete="tel" placeholder="e.g. 0801 234 5678">
+        <label for="service">Service</label>
+        <select id="service"><option>Website Development</option><option>Web Application</option><option>Assignment Services</option><option>Printing &amp; Documents</option><option>Graphics &amp; Design</option><option>Communication Coaching</option><option>Internet Services</option></select>
+        <label for="msg">Details</label><textarea id="msg" rows="4" placeholder="Tell me what you need and your deadline..."></textarea>
+        <p class="err" id="err"></p>
+        <button type="button" class="btn btn-ink full" id="sendWa">Send via WhatsApp</button>
+        <button type="button" class="btn full" id="sendMail">Send via Email</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact" class="sec">
+    <div class="wrap">
+      <p class="num">10</p><h2>Contact</h2>
+      <div class="cards">
+        <a class="box link" href="tel:+2347072500449"><small>Call</small><b>0707 250 0449</b></a>
+        <a class="box link" href="https://wa.me/2347072500449" target="_blank" rel="noopener"><small>WhatsApp</small><b>Chat with me</b></a>
+        <a class="box link" href="mailto:Osivueokpokpa@gmail.com"><small>Email</small><b>Osivueokpokpa@gmail.com</b></a>
+        <a class="box link" href="https://github.com/Osivuelabs" target="_blank" rel="noopener"><small>GitHub</small><b>Osivuelabs</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Osivue Labs. Built in Benin City.</div></footer>
+<a class="wa" href="https://wa.me/2347072500449" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* ===== SETTINGS: edit here ===== */
+  var WA = '2347072500449';
+  var MAIL = 'Osivueokpokpa@gmail.com';
+  var PRICES = [
+    ['Black & white print (per page)', 50],
+    ['Colour print (per page)', 150],
+    ['Photocopy (per page)', 30],
+    ['Assignment typing & formatting (per page)', 200],
+    ['Assignment proofreading (per page)', 100],
+    ['Spiral binding (per copy)', 500],
+    ['Lamination (per page)', 300],
+    ['Flyer / poster design (each)', 3000]
+  ];
+  /* =============================== */
+
+  $('yr').textContent = new Date().getFullYear();
+
+  $('burger').onclick = function () { $('menu').classList.toggle('open'); };
+  $('menu').onclick = function (e) {
+    if (e.target.tagName === 'A') $('menu').classList.remove('open');
+  };
+
+  PRICES.forEach(function (p, i) {
+    var o = document.createElement('option');
+    o.value = i;
+    o.textContent = p[0] + ' - ₦' + p[1];
+    $('item').appendChild(o);
+  });
+  function qty() { return Math.max(1, parseInt($('qty').value, 10) || 1); }
+  function calc() {
+    var t = PRICES[$('item').value][1] * qty();
+    $('total').textContent = '₦' + t.toLocaleString();
+    return t;
+  }
+  $('item').onchange = calc;
+  $('qty').oninput = calc;
+  calc();
+  $('quoteBtn').onclick = function () {
+    var m = 'Hello Osivue Labs, I would like a print quote.\nService: ' + PRICES[$('item').value][0] +
+      '\nQuantity: ' + qty() + '\nEstimate: ₦' + calc().toLocaleString();
+    window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m), '_blank');
+  };
+
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.onclick = function () {
+      var txt = $(b.dataset.c).textContent.trim();
+      function done() { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); }
+      function fallback() {
+        var t = document.createElement('textarea');
+        t.value = txt; document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(t);
+      }
+      if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, fallback); else fallback();
+    };
+  });
+
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  function message() {
+    var n = $('name').value.trim(), p = $('phone').value.trim();
+    if (!n || !p) { $('err').textContent = 'Please enter your name and phone number.'; return null; }
+    $('err').textContent = '';
+    return 'Hello Osivue Labs,\n\nName: ' + n + '\nPhone: ' + p + '\nService: ' + $('service').value +
+      '\nDetails: ' + ($('msg').value.trim() || 'N/A');
+  }
+  $('sendWa').onclick = function () {
+    var m = message();
+    if (m) window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(m), '_blank');
+  };
+  $('sendMail').onclick = function () {
+    var m = message();
+    if (m) location.href = 'mailto:' + MAIL + '?subject=' + encodeURIComponent('New Order: ' + $('service').value) + '&body=' + encodeURIComponent(m);
+  };
+})();
+</script>
+</body>
+</html>
